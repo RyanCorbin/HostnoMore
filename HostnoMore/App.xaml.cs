@@ -30,16 +30,37 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
-            //ontainerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
-           // containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
-           // containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
-           /// containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
-           // containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
-           // containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
-           // containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
-           // containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
-           // containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
-           // containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
+            containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
+            containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
+            containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
+          //  containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
+            containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
+          //  containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
+          //  containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
+            containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
+            containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
+          //  containerRegistry.RegisterForNavigation<SubwaySeatPage, SubwaySeatPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
+         //   containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
+         //   containerRegistry.RegisterForNavigation<CallsSubPage, CallsSubPageViewModel>();
+         //   containerRegistry.RegisterForNavigation<PaymentSubPage, PaymentSubPageViewModel>();
+       //     containerRegistry.RegisterForNavigation<CashSubPage, CashSubPageViewModel>();
+        //    containerRegistry.RegisterForNavigation<CreditInfoSubPage, CreditInfoSubPageViewModel>();
+         //   containerRegistry.RegisterForNavigation<ConfirmationSubPage, ConfirmationSubPageViewModel>();
+         //   containerRegistry.RegisterForNavigation<CartSubPage, CartSubPageViewModel>();
+
+            containerRegistry.RegisterSingleton<IRepository, Repository>();
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 
