@@ -41,6 +41,7 @@ namespace HostnoMore
           //  containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
@@ -49,7 +50,7 @@ namespace HostnoMore
           //  containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
             containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
-          //  containerRegistry.RegisterForNavigation<SubwaySeatPage, SubwaySeatPageViewModel>();
+            containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
          //   containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
