@@ -31,7 +31,7 @@ namespace HostnoMore.ViewModels
 
         INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
-        //public DelegateCommand GoToMapCommand { get; set; }
+        public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }
         public DelegateCommand<string> SuggestionTappedCommand { get; set; }
         //public DelegateCommand<string> RestaurantSelectedCommand { get; set; }
@@ -85,7 +85,7 @@ namespace HostnoMore.ViewModels
             _navigationService = navigationService;
 
             GoToRestaurantSide = new DelegateCommand(RestaurantSide);
-            //GoToMapCommand = new DelegateCommand(GoToMap);
+            GoToMapCommand = new DelegateCommand(GoToMap);
             searchActivated = new DelegateCommand(GoToSearch);
             SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
             //RestaurantSelectedCommand = new DelegateCommand<string>(OnRestSelected);
@@ -149,11 +149,11 @@ namespace HostnoMore.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
         }
 
-        //private void GoToMap()
-        //{
-        //    Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToMap)}");
-        //    CrossExternalMaps.Current.NavigateTo("In-N-Out Burger", "583 Grand Ave", "San Marcos", "CA", "92078", "USA", "USA");
-        //}
+        private void GoToMap()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToMap)}");
+            CrossExternalMaps.Current.NavigateTo("In-N-Out Burger", "583 Grand Ave", "San Marcos", "CA", "92078", "USA", "USA");
+        }
     }
 
 }
