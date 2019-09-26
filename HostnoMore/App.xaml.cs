@@ -38,7 +38,6 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
-          //  containerRegistry.RegisterForNavigation<RatingsPage, RatingsPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
@@ -46,20 +45,17 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
             containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
-          //  containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
           //  containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
             containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
             containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
-         //   containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            //   containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
-         //   containerRegistry.RegisterForNavigation<CallsSubPage, CallsSubPageViewModel>();
-         //   containerRegistry.RegisterForNavigation<PaymentSubPage, PaymentSubPageViewModel>();
-       //     containerRegistry.RegisterForNavigation<CashSubPage, CashSubPageViewModel>();
-        //    containerRegistry.RegisterForNavigation<CreditInfoSubPage, CreditInfoSubPageViewModel>();
-         //   containerRegistry.RegisterForNavigation<ConfirmationSubPage, ConfirmationSubPageViewModel>();
-         //   containerRegistry.RegisterForNavigation<CartSubPage, CartSubPageViewModel>();
+          containerRegistry.RegisterForNavigation<PaymentChickFilaPage, PaymentChickFilaPageViewModel>();
+          containerRegistry.RegisterForNavigation<CreditInfoChickFilaPage, CreditInfoChickFilaPageViewModel>();
+          containerRegistry.RegisterForNavigation<ConfirmationChickFilaPage, ConfirmationChickFilaPageViewModel>();
+           containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
 
             containerRegistry.RegisterSingleton<IRepository, Repository>();
             containerRegistry.RegisterSingleton<IRepository, Repository>();

@@ -7,10 +7,42 @@ using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class MenuTwoContainerPageViewModel : BindableBase
+    public class MenuTwoContainerPageViewModel : BindableBase, INavigationAware
     {
-       
+        INavigationService nav_service;
+
+        public DelegateCommand GoToCart { get; set; }
+
+        public MenuTwoContainerPageViewModel(INavigationService navigationService)
+        {
+            nav_service = navigationService;
+
+            GoToCart = new DelegateCommand(OnToCart);
+        }
+
+        private async void OnToCart()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnToCart)}");
+
+            await nav_service.NavigateAsync("CartChickFilaPage", null);
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
+        }
     }
 }
+
 
 

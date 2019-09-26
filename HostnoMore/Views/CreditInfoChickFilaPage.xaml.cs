@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace HostnoMore.Views
 {
-    public partial class CartSubPage : ContentPage
+    public partial class CreditInfoChickFilaPage : ContentPage
     {
-        public CartSubPage()
+        public CreditInfoChickFilaPage()
         {
             InitializeComponent();
         }

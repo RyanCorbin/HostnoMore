@@ -12,7 +12,7 @@ using Prism.Services;
 
 namespace HostnoMore.ViewModels
 {
-    public class CartPageViewModel : BindableBase, INavigationAware
+    public class CartChickFilaPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService page_service;
@@ -43,7 +43,7 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref _showIsBusySpinner, value); }
         }
 
-        public CartPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
+        public CartChickFilaPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
         {
             nav_service = navigationService;
             page_service = pageDialogService;
@@ -102,7 +102,7 @@ namespace HostnoMore.ViewModels
             }
             else
             {
-                await nav_service.NavigateAsync("PaymentPage", null);
+                await nav_service.NavigateAsync("PaymentSubPage", null);
             }
         }
 

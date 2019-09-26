@@ -10,14 +10,14 @@ using Prism.Services;
 
 namespace HostnoMore.ViewModels
 {
-    public class PaymentPageViewModel : BindableBase, INavigationAware
+    public class PaymentChickFilaPageViewModel : BindableBase, INavigationAware
     {
         INavigationService _navigationService;
         IPageDialogService displayMessage;
 
         public DelegateCommand ContinueToPayment { get; set; }
 
-        public PaymentPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public PaymentChickFilaPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
         {
             _navigationService = navigationService;
             displayMessage = pageDialogService;
@@ -35,17 +35,19 @@ namespace HostnoMore.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToPayment)}");
 
-            if(string.IsNullOrEmpty(selectedMethod)){
+            if (string.IsNullOrEmpty(selectedMethod))
+            {
                 await displayMessage.DisplayAlertAsync("Error", "You must choose a payment method", "Dismiss");
                 return;
             }
 
             if (selectedMethod == "Credit Card")
             {
-                await _navigationService.NavigateAsync("CreditInfoPage", null);
+                await _navigationService.NavigateAsync("CreditInfoChickFilaPage", null);
             }
-            else{
-                await _navigationService.NavigateAsync("CashPage", null);
+            else
+            {
+                await _navigationService.NavigateAsync("CashChickFilaPage", null);
             }
         }
 
@@ -79,4 +81,5 @@ namespace HostnoMore.ViewModels
         }
     }
 }
+
 
