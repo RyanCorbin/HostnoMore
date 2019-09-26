@@ -95,15 +95,15 @@ namespace HostnoMore.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToPaymentsPage)}");
 
-            if (FoodItem.Count == 0)
-            {
-                await page_service.DisplayAlertAsync("Error", "Your cart is empty", "Dismiss");
-                return;
-            }
-            else
-            {
+            //if (FoodItem.Count == 0)
+            //{
+            //    await page_service.DisplayAlertAsync("Error", "Your cart is empty", "Dismiss");
+            //    return;
+            //}
+            //else
+            //{
                 await nav_service.NavigateAsync("PaymentSubPage", null);
-            }
+            //}
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
