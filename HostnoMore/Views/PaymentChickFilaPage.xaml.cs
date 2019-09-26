@@ -8,7 +8,7 @@ namespace HostnoMore.Views
     {
         public PaymentChickFilaPage()
         {
-           
+            InitializeComponent();
         }
     }
 }

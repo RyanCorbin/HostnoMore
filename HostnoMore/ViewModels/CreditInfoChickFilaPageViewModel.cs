@@ -176,7 +176,7 @@ namespace HostnoMore.ViewModels
                 }
                 else
                 {
-                    await nav_service.NavigateAsync("ConfirmationSubPage", null);
+                    await nav_service.NavigateAsync("ConfirmationChickFilaPage", null);
                     //Restaurant2SideItem card_payment = new Restaurant2SideItem
                     //{
                     //    Item = this.CardPayment

@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="HostNoMore.Views.PaymentChickFilaPage"
+    x:Class="HostnoMore.Views.PaymentChickFilaPage"
     BackgroundImage="paymentBackground.jpeg">
     <StackLayout
         VerticalOptions="CenterAndExpand"

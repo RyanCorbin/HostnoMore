@@ -49,6 +49,8 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
             containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
             containerRegistry.RegisterForNavigation<PaymentChickFilaPage, PaymentChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoChickFilaPage, CreditInfoChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmationChickFilaPage, ConfirmationChickFilaPageViewModel>();

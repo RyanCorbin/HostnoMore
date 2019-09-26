@@ -102,7 +102,7 @@ namespace HostnoMore.ViewModels
             //}
             //else
             //{
-                await nav_service.NavigateAsync("PaymentSubPage", null);
+                await nav_service.NavigateAsync("PaymentChickFilaPage", null);
             //}
         }
 

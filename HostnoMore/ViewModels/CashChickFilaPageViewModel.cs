@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class CashSubPageViewModel : BindableBase, INavigationAware
+    public class CashChickFilaPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IPageDialogService _pageDialogService;
@@ -33,7 +33,7 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref place_cash, value); }
         }
 
-        public CashSubPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
+        public CashChickFilaPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService, IRepository repository)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(CashPageViewModel)}:  ctor");
 
@@ -58,7 +58,7 @@ namespace HostnoMore.ViewModels
 
             if (secret_code == "!8&v")
             {
-                await nav_service.NavigateAsync("ConfirmationSubPage", null);
+                await nav_service.NavigateAsync("ConfirmationChickFilaPage", null);
 
                 //Restaurant2SideItem cashPayment2 = new Restaurant2SideItem
                 //{

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class CallsSubPageViewModel : BindableBase, INavigationAware
+    public class CallsChickFilaPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
         IRepository _repo;
@@ -40,7 +40,7 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref _showIsBusySpinner, value); }
         }
 
-        public CallsSubPageViewModel(INavigationService navigationService, IRepository repository)
+        public CallsChickFilaPageViewModel(INavigationService navigationService, IRepository repository)
         {
             nav_service = navigationService;
             _repo = repository;
