@@ -48,9 +48,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\ChickFilaSeatPage.xaml.cs">
-      <DependentUpon>ChickFilaSeatPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\ChooseSeatingPage.xaml.cs">
       <DependentUpon>ChooseSeatingPage.xaml</DependentUpon>
     </Compile>
