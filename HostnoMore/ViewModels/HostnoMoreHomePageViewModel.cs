@@ -7,17 +7,17 @@ using Plugin.ExternalMaps;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class HostnoMoreHomePageViewModel : BindableBase
+    public class HostnoMoreHomePageViewModel : BindableBase, INavigationAware
     {
         INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
         public DelegateCommand GoToMapCommand { get; set; }
         public DelegateCommand searchActivated { get; set; }
         public DelegateCommand<string> SuggestionTappedCommand { get; set; }
-        //public DelegateCommand<string> RestaurantSelectedCommand { get; set; }
 
         private string enter_restaurant;
         public string EnterRestaurant

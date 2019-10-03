@@ -131,7 +131,7 @@ namespace HostnoMore.Services
         {
             itemFromSomeDataSource1 = new List<Restaurant2SideItem>();
 
-            for (int i = 0; i<numberOfItems; i++)
+            for (int i = 0; i < numberOfItems; i++)
             {
                 var newOrderItem = new Restaurant2SideItem()
                 {

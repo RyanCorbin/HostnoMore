@@ -21,13 +21,6 @@ namespace HostnoMore.ViewModels
         public DelegateCommand RateExperience { get; set; }
         public DelegateCommand AnotherOrder { get; set; }
 
-        //private ObservableCollection<OrderItem> _item;
-        //public ObservableCollection<OrderItem> Item
-        //{
-        //    get { return _item; }
-        //    set { SetProperty(ref _item, value); }
-        //}
-
         private string foodDelivery;
         public string FoodDelivery
         {

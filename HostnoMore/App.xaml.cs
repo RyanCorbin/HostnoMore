@@ -28,35 +28,30 @@ namespace HostnoMore
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
+            containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
+            containerRegistry.RegisterForNavigation<CallsChickFilaPage, CallsChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
-            containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
-            containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
-            containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
-            containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
-            containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
-            containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
-            containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
+            containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
             containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
             containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
             containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
-            containerRegistry.RegisterForNavigation<GetStartedPage, GetStartedPageViewModel>();
-            containerRegistry.RegisterForNavigation<LearnMorePage, LearnMorePageViewModel>();
-            containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
-            containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
             containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
+            containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
+            containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
+            containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
+            containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
+            containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<PaymentChickFilaPage, PaymentChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoChickFilaPage, CreditInfoChickFilaPageViewModel>();
+            containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
+            containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmationChickFilaPage, ConfirmationChickFilaPageViewModel>();
-            containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
-            containerRegistry.RegisterSingleton<IRepository, Repository>();
             containerRegistry.RegisterSingleton<IRepository, Repository>();
         }
 
