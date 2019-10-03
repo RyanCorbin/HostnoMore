@@ -38,6 +38,7 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
             containerRegistry.RegisterForNavigation<CreditInfoPage, CreditInfoPageViewModel>();
             containerRegistry.RegisterForNavigation<ConfirmationPage, ConfirmationPageViewModel>();
+            containerRegistry.RegisterForNavigation<RestaurantSidePage, RestaurantSidePageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();

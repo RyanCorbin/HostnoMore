@@ -12,23 +12,6 @@ namespace HostnoMore.ViewModels
 {
     public class HostnoMoreHomePageViewModel : BindableBase
     {
-      //  public ObservableCollection<Pin> Pins { get; set; }
-
-        //public Command<MapClickedEventArgs> MapClickedCommand =>
-        //new Command<MapClickedEventArgs>(args =>
-        //{
-        //    Pins.Add(new Pin
-        //    {
-        //        Label = $"In-N-Out",
-        //        Position = new Position(33.1372, -117.1772)//args.Point
-        //    });
-        //    Pins.Add(new Pin
-        //    {
-        //        Label = $"ChickFila",
-        //        Position = new Position(33.141546, -117.191186)//args.Point
-        //    });
-        //});
-
         INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
         public DelegateCommand GoToMapCommand { get; set; }
@@ -43,13 +26,6 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref enter_restaurant, value); }
         }
 
-        //private Map my_map;
-        //public Map MyMap
-        //{
-        //    get { return my_map; }
-        //    set { SetProperty(ref my_map, value); }
-        //}
-
         private bool is_visible;
         public bool IsVisible
         {
@@ -57,22 +33,12 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref is_visible, value); }
         }
 
-        //private string _selectedRestaurant;
-        //public string SelectedRestaurant
-        //{
-        //    get { return _selectedRestaurant; }
-        //    set { SetProperty(ref _selectedRestaurant, value); }
-        //}
-
         List<string> restaurants = new List<string>
         {
             "In-N-Out Burger",
             "ChickFila"
         };
 
-        //private List<string> my_restaurant = new List<string>();
-        //public List<string> MyRestaurant
-        //{ get { return my_restaurant; } set { SetProperty(ref my_restaurant, value); } }
 
         private List<string> _suggestions = new List<string>();
         public List<string> Suggestions
@@ -88,13 +54,8 @@ namespace HostnoMore.ViewModels
             GoToMapCommand = new DelegateCommand(GoToMap);
             searchActivated = new DelegateCommand(GoToSearch);
             SuggestionTappedCommand = new DelegateCommand<string>(OnSuggestionTapped);
-            //RestaurantSelectedCommand = new DelegateCommand<string>(OnRestSelected);
         }
 
-        //private void OnRestSelected(string restSelected)
-        //{
-        //    Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnRestSelected)}:  {restSelected}");
-        //}
 
         private async void RestaurantSide()
         {

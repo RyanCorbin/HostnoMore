@@ -19,12 +19,12 @@ namespace HostnoMore.ViewModels
         public DelegateCommand logoutCommand { get; set; }
         public DelegateCommand PullToRefreshCommand { get; set; }
 
-        //private ObservableCollection<Restaurant2SideItem> restaurant_items;
-        //public ObservableCollection<Restaurant2SideItem> RestaurantItems
-        //{
-        //    get { return restaurant_items; }
-        //    set { SetProperty(ref restaurant_items, value); }
-        //}
+        private ObservableCollection<Restaurant2SideItem> restaurant_items;
+        public ObservableCollection<Restaurant2SideItem> RestaurantItems
+        {
+            get { return restaurant_items; }
+            set { SetProperty(ref restaurant_items, value); }
+        }
 
         private string total_items;
         public string TotalItems
@@ -61,22 +61,22 @@ namespace HostnoMore.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshItemList)}");
 
-            //if (RestaurantItems == null)
-            //{
-            //    ShowIsBusySpinner = true;
-            //    RestaurantItems = new ObservableCollection<Restaurant2SideItem>();
-            //    ShowIsBusySpinner = false;
-            //}
-            //else
-            //{
-            //    ShowIsBusySpinner = true;
-            //    var itemsList = await _repo.GetItems2();
-            //    if (itemsList != null)
-            //    {
-            //        RestaurantItems = new ObservableCollection<Restaurant2SideItem>(itemsList);
-            //    }
-            //    ShowIsBusySpinner = false;
-            //}
+            if (RestaurantItems == null)
+            {
+                ShowIsBusySpinner = true;
+                RestaurantItems = new ObservableCollection<Restaurant2SideItem>();
+                ShowIsBusySpinner = false;
+            }
+            else
+            {
+                ShowIsBusySpinner = true;
+                var itemsList = await _repo.GetItems2();
+                if (itemsList != null)
+                {
+                    RestaurantItems = new ObservableCollection<Restaurant2SideItem>(itemsList);
+                }
+                ShowIsBusySpinner = false;
+            }
         }
 
         private async void GoToHomePage()
@@ -102,14 +102,14 @@ namespace HostnoMore.ViewModels
 
             if (parameters != null && parameters.ContainsKey("ItemAdded"))
             {
-                //if (RestaurantItems == null)
-                //{
-                //    RestaurantItems = new ObservableCollection<Restaurant2SideItem>();
-                //}
-                //var itemToAdd = (Restaurant2SideItem)parameters["ItemAdded"];
-                //RestaurantItems.Add(itemToAdd);
+                if (RestaurantItems == null)
+                {
+                    RestaurantItems = new ObservableCollection<Restaurant2SideItem>();
+                }
+                var itemToAdd = (Restaurant2SideItem)parameters["ItemAdded"];
+                RestaurantItems.Add(itemToAdd);
 
-              //  TotalItems = itemToAdd.ToString();
+                TotalItems = itemToAdd.ToString();
             }
             await RefreshItemList();
         }

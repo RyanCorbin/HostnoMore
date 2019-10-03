@@ -18,6 +18,8 @@
             Grid.Row="0"
             Grid.Column="0"
             Text="Please Select Your Seat"
+            TextColor="White"
+            FontSize="35"
             FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalOptions="End"
@@ -30,11 +32,14 @@
             SelectedItem="{Binding SelectedSeat}"
             HorizontalOptions="Center"
             VerticalOptions="Center" />
-         <Button
+        <Button
             Grid.Row="2"
             Grid.Column="0"
-            Command="{Binding OntoNextPage}"
+            Command="{Binding GoToMenuPage}"
             Text="Go To Menu"
+            TextColor="White"
+            FontSize="20"
+            FontAttributes="Bold"
             HorizontalOptions="Center"
             VerticalOptions="Start" />
     </Grid>

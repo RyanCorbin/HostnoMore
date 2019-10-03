@@ -28,12 +28,12 @@ namespace HostnoMore.ViewModels
         //    set { SetProperty(ref _item, value); }
         //}
 
-       // private string foodDelivery;
-        //public string FoodDelivery
-        //{
-        //    get { return foodDelivery; }
-        //    set { SetProperty(ref foodDelivery, value); }
-        //}
+        private string foodDelivery;
+        public string FoodDelivery
+        {
+            get { return foodDelivery; }
+            set { SetProperty(ref foodDelivery, value); }
+        }
 
         public ConfirmationChickFilaPageViewModel(IPageDialogService pageDialogService, INavigationService navigationService, IRepository repository)
         {
@@ -41,50 +41,62 @@ namespace HostnoMore.ViewModels
             nav_service = navigationService;
             _repo = repository;
 
-           // FoodDelivery = "Food out for delivery";
+            FoodDelivery = "Food out for delivery";
 
-           // RateExperience = new DelegateCommand(GoToRate);
+            RateExperience = new DelegateCommand(GoToRate);
             AnotherOrder = new DelegateCommand(GoToHomePage);
         }
 
         private async void GoToHomePage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToHomePage)}");
-            
-            //await nav_service.NavigateAsync("MainPage", null);
-            //{
-            //    Item = this.FoodDelivery;
-            //};
+            await nav_service.NavigateAsync("MainPage", null);
+            Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
+            {
+                Item = this.FoodDelivery
+            };
 
-            //await _repo.AddItem(foodToDeliver);
-            //var navParams = new NavigationParameters();
-            //navParams.Add("ItemAdded", navParams);
-            //await Task.Delay(1);
-           // _repo.RemoveAllItems(listOfItems);
+            await _repo.AddItem(foodToDeliver);
+            var navParams = new NavigationParameters();
+            navParams.Add("ItemAdded", navParams);
+            await Task.Delay(1);
+            // _repo.RemoveAllItems(listOfItems);
         }
 
-        //private async void GoToRate()
-        //{
-        //    Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRate)}");
+        private async void GoToRate()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRate)}");
 
-        //    bool response = await displayMessage.DisplayAlertAsync("LIKE OUR APP?", "Share your experience with us!", "Rate Now!", "Dismiss");
-        //    if (response == false)
-        //    {
-        //        await nav_service.NavigateAsync("GetStartedPage", null);
-        //        //  _repo.RemoveAllItems(listOfItems);
-          
-        //        //var navParams = new NavigationParameters();
-        //        //navParams.Add("ItemAdded", navParams);
-        //        //await Task.Delay(1);
-        //    }
-        //    else
-        //    {
-        //       // await nav_service.NavigateAsync("RatingsPage", null);
-        //       // var navParams = new NavigationParameters();
-        //       // navParams.Add("ItemAdded", navParams);
-        //     //   await Task.Delay(1);
-        //    }
-        //}
+            bool response = await displayMessage.DisplayAlertAsync("LIKE OUR APP?", "Share your experience with us!", "Rate Now!", "Dismiss");
+            if (response == false)
+            {
+                await nav_service.NavigateAsync("GetStartedPage", null);
+                //  _repo.RemoveAllItems(listOfItems);
+                Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
+                {
+                    Item = this.FoodDelivery
+                };
+
+                await _repo.AddItem(foodToDeliver);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", navParams);
+                await Task.Delay(1);
+            }
+            else
+            {
+                await nav_service.NavigateAsync("RatingsPage", null);
+                Restaurant2SideItem foodToDeliver = new Restaurant2SideItem
+                {
+                    Item = this.FoodDelivery
+                };
+
+                await _repo.AddItem(foodToDeliver);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", navParams);
+                await Task.Delay(1);
+                //   _repo.RemoveAllItems(listOfItems);
+            }
+        }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
@@ -103,4 +115,3 @@ namespace HostnoMore.ViewModels
 
     }
 }
-
