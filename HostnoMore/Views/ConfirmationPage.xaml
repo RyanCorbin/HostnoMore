@@ -22,7 +22,8 @@
             <Label
                 Text="Tip Your Experience!"
                 FontAttributes="Bold"
-                HorizontalOptions="FillAndExpand"
+                FontSize="20"
+                HorizontalOptions="Center"
                 VerticalOptions="FillAndExpand"
                 Grid.Row="0"
                 Grid.Column="0"
@@ -30,21 +31,23 @@
             <Button
                 Text="0%"
                 TextColor="Black"
+                FontAttributes="Bold"
                 FontSize="20"
                 BorderWidth="1"
                 BorderRadius="1"
                 BorderColor="#000"
                 HorizontalOptions="Center"
-                VerticalOptions="Fill"
+                VerticalOptions="FillAndExpand"
                 Grid.Row="1"
                 Grid.Column="0"
                 />
             <Button
                 Text="15%"
                 TextColor="Black"
+                FontAttributes="Bold"
                 FontSize="20"
                 HorizontalOptions="Center"
-                VerticalOptions="Fill"
+                VerticalOptions="FillAndExpand"
                 Grid.Row="2"
                 Grid.Column="0"
                 />
@@ -52,9 +55,10 @@
             <Button
                 Text="20%"
                 TextColor="Black"
+                FontAttributes="Bold"
                 FontSize="20"
                 HorizontalOptions="Center"
-                VerticalOptions="Fill"
+                VerticalOptions="FillAndExpand"
                 Grid.Row="3"
                 Grid.Column="0"
                 />
@@ -64,7 +68,7 @@
                 FontAttributes="Bold"
                 FontSize="20"
                 HorizontalOptions="Center"
-                VerticalOptions="Fill"
+                VerticalOptions="FillAndExpand"
                 Command="{Binding AnotherOrder}"
                 Grid.Row="4"
                 Grid.Column="0"
