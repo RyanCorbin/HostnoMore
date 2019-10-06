@@ -18,7 +18,6 @@ namespace HostnoMore.ViewModels
         INavigationService nav_service;
         IRepository _repo;
 
-        public DelegateCommand RateExperience { get; set; }
         public DelegateCommand AnotherOrder { get; set; }
 
         private string foodDelivery;
@@ -36,7 +35,6 @@ namespace HostnoMore.ViewModels
 
             FoodDelivery = "Food out for delivery";
 
-            RateExperience = new DelegateCommand(GoToRate);
             AnotherOrder = new DelegateCommand(GoToHomePage);
         }
 
@@ -56,40 +54,6 @@ namespace HostnoMore.ViewModels
             //_repo.RemoveAllItems(listOfItems);
         }
 
-        private async void GoToRate()
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRate)}");
-
-            bool response = await displayMessage.DisplayAlertAsync("LIKE OUR APP?", "Share your experience with us!", "Rate Now!", "Dismiss");
-            if (response == false)
-            {
-                await nav_service.NavigateAsync("GetStartedPage", null);
-                //  _repo.RemoveAllItems(listOfItems);
-                RestaurantSideItem foodToDeliver = new RestaurantSideItem
-                {
-                    Item = this.FoodDelivery
-                };
-
-                await _repo.AddItem(foodToDeliver);
-                var navParams = new NavigationParameters();
-                navParams.Add("ItemAdded", navParams);
-                await Task.Delay(1);
-            }
-            else
-            {
-                await nav_service.NavigateAsync("RatingsPage", null);
-                RestaurantSideItem foodToDeliver = new RestaurantSideItem
-                {
-                    Item = this.FoodDelivery
-                };
-
-                await _repo.AddItem(foodToDeliver);
-                var navParams = new NavigationParameters();
-                navParams.Add("ItemAdded", navParams);
-                await Task.Delay(1);
-                //   _repo.RemoveAllItems(listOfItems);
-            }
-        }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {

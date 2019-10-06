@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class MenuOneContainerPageViewModel : BindableBase
+    public class MenuOneContainerPageViewModel : BindableBase, INavigationAware
     {
         INavigationService nav_service;
 
