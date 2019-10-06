@@ -9,7 +9,6 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 
-
 namespace HostnoMore.Droid
 {
     [Activity(Label = "HostnoMore", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -23,12 +22,10 @@ namespace HostnoMore.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            Xamarin.FormsGoogleMaps.Init(this, bundle);
-            // Xamarin.FormsMaps.Init(this, bundle);
 
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
-            LoadApplication(new App());
 
+            LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
@@ -43,4 +40,3 @@ namespace HostnoMore.Droid
         }
     }
 }
-

@@ -28,7 +28,6 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 />
-
             <Button
                 Text="0%"
                 TextColor="Black"
@@ -59,6 +58,17 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Fill"
                 Grid.Row="3"
+                Grid.Column="0"
+                />
+            <Button
+                Text="Place Another Order"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Fill"
+                Command="{Binding AnotherOrder}"
+                Grid.Row="4"
                 Grid.Column="0"
                 />
         </Grid>
