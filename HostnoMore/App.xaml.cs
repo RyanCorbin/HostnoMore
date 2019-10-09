@@ -34,11 +34,14 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<CallsChickFilaPage, CallsChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
             containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
-            containerRegistry.RegisterForNavigation<ComboPage>();
+            containerRegistry.RegisterForNavigation<ComboPage,ComboPageViewModel>();
+            containerRegistry.RegisterForNavigation<ComboPage1, ComboPageViewModel1>();
             containerRegistry.RegisterForNavigation<Blog>();
           //  containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<EntreeSelectionPage, EntreeSelectionPageViewModel>();
             containerRegistry.RegisterForNavigation<Entree, EntreeViewModel>();
+            containerRegistry.RegisterForNavigation<EntreeSelectionPage1, EntreeSelectionPageViewModel1>();
+            containerRegistry.RegisterForNavigation<Entree1, EntreeViewModel1>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();

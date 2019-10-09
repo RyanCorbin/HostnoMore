@@ -38,11 +38,11 @@ namespace HostnoMore.ViewModels
         }
         async void ExecuteNavigateCommand()
         {
-            await _navigationService.NavigateAsync("ComboPage");
+            await _navigationService.NavigateAsync("ComboPage1");
         }
         async void ExecuteNavigateCommand2()
         {
-            await _navigationService.NavigateAsync("EntreeSelectionPage");
+            await _navigationService.NavigateAsync("EntreeSelectionPage1");
         }
         async void ExecuteNavigateCommand3()
         {
