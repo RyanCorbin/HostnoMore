@@ -14,6 +14,7 @@ namespace HostnoMore
 {
     public partial class App : PrismApplication
     {
+        public App() : this(null) { }
         public App(IPlatformInitializer initializer = null) : base(initializer){}
 
         protected override async void OnInitialized()
@@ -33,12 +34,13 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<CallsChickFilaPage, CallsChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
             containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
+            containerRegistry.RegisterForNavigation<ComboPage>();
+            containerRegistry.RegisterForNavigation<Blog>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<EntreeSelectionPage, EntreeSelectionPageViewModel>();
+            containerRegistry.RegisterForNavigation<Entree, EntreeViewModel>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabMealPage, TabMealPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabIndivItemPage, TabIndivItemPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabDrinkPage, TabDrinkPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabSideAndDrinksPage, TabSideAndDrinksPageViewModel>();
             containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
             containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();

@@ -3,20 +3,21 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:HostnoMore.Views"
-    x:Class="HostnoMore.Views.MenuOneContainerPage">
+    x:Class="HostnoMore.Views.MenuOneContainerPage"
+    Title="{Binding Title}">
     <TabbedPage.ToolbarItems>
         <ToolbarItem Icon="shoppingcart.png" Command="{Binding GoToCart}"/>
     </TabbedPage.ToolbarItems>
-    <views:TabMealPage 
-        Title="Meals"
+    <views:ComboPage 
+        Title="Combos"
         Icon="meal.png"
         />
-    <views:TabIndivItemPage
-        Title="Items"
+    <views:Entree
+        Title="Entrees"
         Icon="indivitem.png"
         />
-    <views:TabDrinkPage
-        Title="Drinks"
+    <!--<views:Sides
+        Title="Sides"
         Icon="drink.png"
-        />
+        />-->
 </TabbedPage>

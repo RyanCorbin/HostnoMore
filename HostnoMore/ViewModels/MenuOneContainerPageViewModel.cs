@@ -7,40 +7,48 @@ using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
-    public class MenuOneContainerPageViewModel : BindableBase, INavigationAware
+    public class MenuOneContainerPageViewModel : BindableBase
     {
-        INavigationService nav_service;
+        private string _title;
+        public string Title
+        {
+            get { return _title; }
+            set { SetProperty(ref _title, value); }
+        }
 
+        public string page;
+        public DelegateCommand _navigateCommand;
+        private readonly INavigationService _navigationService;
         public DelegateCommand GoToCart { get; set; }
 
+        public DelegateCommand NavigateCommand =>
+            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
         public MenuOneContainerPageViewModel(INavigationService navigationService)
         {
-            nav_service = navigationService;
+            Title = "MainPage";
+            _navigationService = navigationService;
 
             GoToCart = new DelegateCommand(OnToCart);
         }
-
         private async void OnToCart()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnToCart)}");
 
-            await nav_service.NavigateAsync("CartPage", null);
+            await _navigationService.NavigateAsync("CartPage", null);
+        }
+        async void ExecuteNavigateCommand()
+        {
+            await _navigationService.NavigateAsync("ComboPage");
+        }
+        async void ExecuteNavigateCommand2()
+        {
+            await _navigationService.NavigateAsync("EntreeSelectionPage");
+        }
+        async void ExecuteNavigateCommand3()
+        {
+            await _navigationService.NavigateAsync("");
         }
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
-        }
-
-        public void OnNavigatingTo(INavigationParameters parameters)
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
-        }
     }
 }
 

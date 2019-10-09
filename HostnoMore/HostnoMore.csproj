@@ -66,6 +66,15 @@
       <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.dll</HintPath>
 	      </Reference>
     <Reference Include="Mono.Android" />
+    <EmbeddedResource Update="Views\Blog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Entree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EntreeSelectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PaymentChickFilaPage - Copy.xaml.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
