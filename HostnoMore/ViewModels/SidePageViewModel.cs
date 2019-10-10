@@ -12,22 +12,13 @@ using Prism.Services;
 
 namespace HostnoMore.ViewModels
 {
-    public class SidePageViewModel : ViewModelBase, INavigationAware
+    public class SidePageViewModel : ViewModelBase
     {
-        INavigationService nav_service;
-        IPageDialogService page_service;
-        IRepository _repo;
         private string _title;
-        private Blog place_order;
         public string Title
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
-        }
-        public Blog PlaceOrder
-        {
-            get { return place_order; }
-            set { SetProperty(ref place_order, value); }
         }
         public DelegateCommand NavigateToBlogCommand { get; private set; }
 
@@ -85,14 +76,10 @@ namespace HostnoMore.ViewModels
             get { return _blogs; }
             set { SetProperty(ref _blogs, value); }
         }
-        public SidePageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
+        public SidePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Blogs";
-            nav_service = navigationService;
-            page_service = pageDialogService;
-            _repo = repository;
-
             NavigateToBlogCommand = new DelegateCommand(NavigateToBlog, () => SelectedBlog != null).ObservesProperty(() => SelectedBlog);
 
         }
@@ -107,21 +94,11 @@ namespace HostnoMore.ViewModels
         {
             await _navigationService.NavigateAsync("");
         }
-        private async void NavigateToBlog()
+        private void NavigateToBlog()
         {
             var parameter = new NavigationParameters();
             parameter.Add("Blog", SelectedBlog);
-   
             NavigationService.NavigateAsync("Blog", parameter);
-            bool userResponse = await page_service.DisplayAlertAsync("Add Item?", "Are you sure you want to add item to cart?", "Ok", "Cancel");
-            PlaceOrder = (SelectedBlog);
-            OrderItem newItem = new OrderItem
-            {
-                Item = this.PlaceOrder
-            };
-            await _repo.AddItem(newItem);
-            var navParams = new NavigationParameters();
-            navParams.Add("ItemAdded", newItem);
         }
     }
 }

@@ -59,16 +59,6 @@ namespace HostnoMore.ViewModels
             if (secret_code == "!8&v")
             {
                 await nav_service.NavigateAsync("ConfirmationChickFilaPage", null);
-
-                //Restaurant2SideItem cashPayment2 = new Restaurant2SideItem
-                //{
-                //    Item = this.PlaceCash
-                //};
-
-                //await _repo.AddItem(cashPayment2);
-                //var navParams = new NavigationParameters();
-                //navParams.Add("ItemAdded", navParams);
-                //await Task.Delay(1);
             }
             if (secret_code == "" || secret_code != "!8&v")
             {

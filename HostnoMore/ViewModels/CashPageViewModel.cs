@@ -58,12 +58,6 @@ namespace HostnoMore.ViewModels
             if (secret_code == "!8&v") {
                 await nav_service.NavigateAsync("ConfirmationPage", null);
 
-          
-
-                //await _repo.AddItem(cashPayment);
-                //var navParams = new NavigationParameters();
-                //navParams.Add("ItemAdded", navParams);
-                //await Task.Delay(1);
             }
             if (secret_code == "" || secret_code != "!8&v"){
                 await _pageDialogService.DisplayAlertAsync("Error", "Incorrect Code", "Try Again");

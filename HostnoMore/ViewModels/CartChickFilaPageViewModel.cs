@@ -45,16 +45,16 @@ namespace HostnoMore.ViewModels
 
         public CartChickFilaPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
         {
+            RefreshItemList();
             nav_service = navigationService;
             page_service = pageDialogService;
             _repo = repository;
-
+            RefreshItemList();
             CheckoutCommand = new DelegateCommand(GoToPaymentsPage);
             PullToRefreshCommand = new DelegateCommand(OnPullToRefresh);
             DeleteCommand = new DelegateCommand<OrderItem>(OnDeleteTapped);
             RefreshItemList();
         }
-
         private async void OnPullToRefresh()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnPullToRefresh)}");
@@ -95,29 +95,32 @@ namespace HostnoMore.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToPaymentsPage)}");
 
-            //if (FoodItem.Count == 0)
-            //{
-            //    await page_service.DisplayAlertAsync("Error", "Your cart is empty", "Dismiss");
-            //    return;
-            //}
-            //else
-            //{
-                await nav_service.NavigateAsync("PaymentChickFilaPage", null);
-            //}
+            if (FoodItem.Count == 0)
+            {
+                await page_service.DisplayAlertAsync("Error", "Your cart is empty", "Dismiss");
+                return;
+            }
+            else
+            {
+                await nav_service.NavigateAsync("PaymentPage", null);
+            }
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedFrom)}");
+            RefreshItemList();
         }
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatedTo)}");
+            RefreshItemList();
         }
 
         public async void OnNavigatingTo(INavigationParameters parameters)
         {
+            RefreshItemList();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
 
             if (parameters != null && parameters.ContainsKey("ItemAdded"))
@@ -135,4 +138,3 @@ namespace HostnoMore.ViewModels
         }
     }
 }
-
