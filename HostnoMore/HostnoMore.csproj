@@ -4,27 +4,37 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.0.0.13" />
-    <PackageReference Include="Xam.Plugin.LatestVersion" Version="1.1.1" />
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
-    <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
+    <PackageReference Include="Xam.Plugin.DeviceInfo" Version="4.1.1" />
+    <PackageReference Include="Xam.Plugin.LatestVersion" Version="1.1.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
     <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
     <PackageReference Include="Xamarin.Forms.GoogleMaps.Bindings" Version="2.2.0" />
-    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="3.0.4" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="3.2.1" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.2.0.848062" />
     <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
     <Folder Include="Service\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\RestaurantName.cs" />
     <Compile Remove="CreditInfoPage.cs" />
+    <Compile Remove="ViewModels\MainPageViewModel.cs" />
+    <Compile Remove="ViewModels\TabSandwichesPageViewModel.cs" />
     <Compile Remove="Views\InNOutMenuPage.xaml.cs" />
     <Compile Remove="ViewModels\InNOutMenuPageViewModel.cs" />
     <Compile Remove="Services\IRepository.cs" />
@@ -36,6 +46,7 @@
     <Compile Remove="ViewModels\FirstMenuPageViewModel.cs" />
     <Compile Remove="Views\TabIndiv.xaml.cs" />
     <Compile Remove="Views\FirstMenuPage.xaml.cs" />
+    <Compile Remove="Views\TabSandwichesPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ChooseSeatingPage.xaml" />
@@ -46,6 +57,7 @@
     <EmbeddedResource Remove="Views\InNOutMenuContainerPage.xaml" />
     <EmbeddedResource Remove="Views\TabIndiv.xaml" />
     <EmbeddedResource Remove="Views\FirstMenuPage.xaml" />
+    <EmbeddedResource Remove="Views\TabSandwichesPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ChooseSeatingPage.xaml">
@@ -66,6 +78,15 @@
       <HintPath>..\..\..\..\..\Library\Frameworks\Mono.framework\External\xbuild-frameworks\MonoAndroid\v1.0\System.dll</HintPath>
 	      </Reference>
     <Reference Include="Mono.Android" />
+    <EmbeddedResource Update="Views\Blog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Entree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\EntreeSelectionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\PaymentChickFilaPage - Copy.xaml.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

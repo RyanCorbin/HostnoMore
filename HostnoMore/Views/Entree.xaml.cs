@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
 namespace HostnoMore.Views
 {
-    public partial class TabSideAndDrinksPage : ContentPage
+    public partial class Entree : ContentPage
     {
-        public TabSideAndDrinksPage()
+        public Entree()
         {
             InitializeComponent();
         }

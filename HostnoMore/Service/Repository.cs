@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using HostnoMore.Models;
 using HostnoMore.Services;
@@ -44,7 +45,6 @@ namespace HostnoMore.Services
 
             return itemFromSomeDataSource;
         }
-
         // Method summary provided in interface.
         public async Task AddItem(OrderItem newOrderItem)
         {

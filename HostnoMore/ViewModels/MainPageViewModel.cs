@@ -1,13 +1,13 @@
-﻿using System;
-using System.Diagnostics;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using Xamarin.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace HostnoMore.ViewModels
 {
-    public class MenuTwoContainerPageViewModel : BindableBase
+    public class MainPageViewModel : BindableBase
     {
         private string _title;
         public string Title
@@ -19,22 +19,13 @@ namespace HostnoMore.ViewModels
         public string page;
         public DelegateCommand _navigateCommand;
         private readonly INavigationService _navigationService;
-        public DelegateCommand GoToCart { get; set; }
 
         public DelegateCommand NavigateCommand =>
             _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
-        public MenuTwoContainerPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService)
         {
             Title = "MainPage";
             _navigationService = navigationService;
-
-            GoToCart = new DelegateCommand(OnToCart);
-        }
-        private async void OnToCart()
-        {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnToCart)}");
-
-            await _navigationService.NavigateAsync("CartPage", null);
         }
         async void ExecuteNavigateCommand()
         {
@@ -46,11 +37,7 @@ namespace HostnoMore.ViewModels
         }
         async void ExecuteNavigateCommand3()
         {
-            await _navigationService.NavigateAsync("SidePage");
+            await _navigationService.NavigateAsync("");
         }
-
     }
 }
-
-
-
