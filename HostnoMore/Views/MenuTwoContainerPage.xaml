@@ -15,8 +15,8 @@
         Title="Entrees"
         Icon="indivitem.png"
         />
-    <!--<views:Sides
+    <views:SidePage
         Title="Sides"
         Icon="drink.png"
-        />-->
+        />
 </TabbedPage>

@@ -36,6 +36,8 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<ChickFilaSeatPage, ChickFilaSeatPageViewModel>();
             containerRegistry.RegisterForNavigation<ComboPage,ComboPageViewModel>();
             containerRegistry.RegisterForNavigation<ComboPage1, ComboPageViewModel1>();
+            containerRegistry.RegisterForNavigation<SidePage, SidePageViewModel>();
+            containerRegistry.RegisterForNavigation<SidePage1, SidePageViewModel1>();
             containerRegistry.RegisterForNavigation<Blog>();
           //  containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<EntreeSelectionPage, EntreeSelectionPageViewModel>();
