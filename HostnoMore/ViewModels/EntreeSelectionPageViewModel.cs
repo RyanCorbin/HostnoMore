@@ -99,8 +99,8 @@ namespace HostnoMore.ViewModels
         private void NavigateToBlog()
         {
             var parameter = new NavigationParameters();
-            parameter.Add("Entrees", SelectedEntree);
-            NavigationService.NavigateAsync("Entrees", parameter);
+            parameter.Add("Entree", SelectedEntree);
+            NavigationService.NavigateAsync("Entree", parameter);
         }
     }
 }

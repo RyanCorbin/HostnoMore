@@ -17,9 +17,15 @@
 
                 <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5,0,0" />
                 <Label Text="{Binding EntreeDetail.EntreeDescription}" LineBreakMode="WordWrap" VerticalOptions="FillAndExpand"></Label>
-                <Button Text="Small"/>
-                <Button Text="Medium"/>
-                <Button Text="Large"/>
+                <Button
+                 Text="Small"
+                 Command="{Binding TapToOrder}" />
+                <Button 
+                 Text="Medium"
+                 Command="{Binding TapToOrder}"/>
+                <Button 
+                 Text="Large"
+                 Command="{Binding TapToOrder}"/>
                 <Image Source="{Binding EntreeDetail.imageName}"/>
             </StackLayout>
         </Frame.Content>

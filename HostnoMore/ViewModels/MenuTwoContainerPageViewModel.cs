@@ -46,7 +46,7 @@ namespace HostnoMore.ViewModels
         }
         async void ExecuteNavigateCommand3()
         {
-            await _navigationService.NavigateAsync("");
+            await _navigationService.NavigateAsync("SidePage");
         }
 
     }

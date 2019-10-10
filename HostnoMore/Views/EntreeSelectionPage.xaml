@@ -6,7 +6,7 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <ListView ItemsSource="{Binding Entrees, Mode=TwoWay}" HasUnevenRows="True" SelectedItem="{Binding SelectedEntree}" local:ItemTappedAttached.Command="{Binding NavigateToEntreeCommand}">
+        <ListView ItemsSource="{Binding Entrees, Mode=TwoWay}" HasUnevenRows="True" SelectedItem="{Binding SelectedEntree}" local:ItemTappedAttached.Command="{Binding NavigateToBlogCommand}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
