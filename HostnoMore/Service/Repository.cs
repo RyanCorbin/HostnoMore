@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using HostnoMore.Models;
 using HostnoMore.Services;
@@ -28,19 +29,19 @@ namespace HostnoMore.Services
 
         public async Task<IList<OrderItem>> GetItem(int numberOfItems)
         {
-            itemFromSomeDataSource = new List<OrderItem>();
+            //itemFromSomeDataSource = new List<OrderItem>();
 
-            for (int i = 0; i < numberOfItems; i++)
-            {
-                var newOrderItem = new OrderItem()
-                {
-                    Item = $"{i}"
-                };
+            //for (int i = 0; i < numberOfItems; i++)
+            //{
+            //    var newOrderItem = new OrderItem()
+            //    {
+            //        Item = this.
+            //    };
 
-                itemFromSomeDataSource.Add(newOrderItem);
-            }
+            //    itemFromSomeDataSource.Add(newOrderItem);
+            //}
 
-            await Task.Delay(500);
+            //await Task.Delay(500);
 
             return itemFromSomeDataSource;
         }

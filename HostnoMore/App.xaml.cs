@@ -46,7 +46,7 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<Entree1, EntreeViewModel1>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
-            containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
+           // containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
             containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
             containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();
