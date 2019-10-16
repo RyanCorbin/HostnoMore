@@ -22,48 +22,33 @@ namespace HostnoMore.ViewModels
         {
             new Entree
             {
-                EntreeDescription = "Chicken Sandwitch",
-                entreeTitle = "Chicken Sandwitch",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                EntreeDescription = "DOUBLE–DOUBLE ®",
+                entreeTitle = "DOUBLE–DOUBLE ®",
+                price = "Price: $3.95",
+                imageName = "doubledouble.png"
             },
             new Entree
             {
-                EntreeDescription = "Spicy Chicken Sandwitch",
-                entreeTitle = "Spicy Chicken Sandwitch",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                EntreeDescription = "Cheeseburger",
+                entreeTitle = "Cheeseburger",
+                price = "Price: $2.80",
+                imageName = "cheeseburger.png"
             },
             new Entree
             {
-                EntreeDescription = "Chicken nuggets",
-                entreeTitle = "Chicken nuggets",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                EntreeDescription = "Hamburger",
+                entreeTitle = "Hamburger",
+                price = "Price: $2.50",
+                imageName = "hamburger.png"
             },
             new Entree
             {
-                EntreeDescription = "Chicken Salad",
-                entreeTitle = "Chicken salad",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                EntreeDescription = "French Fries",
+                entreeTitle = "French Fries",
+                price = "Price: $1.90",
+                imageName = "fries.png"
             },
-            new Entree
-            {
-                EntreeDescription = "Chicken Wrap",
-                entreeTitle = "Chicken Wrap",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
-            },
-            new Entree
-            {
-                EntreeDescription = "Vegan Stuff",
-                entreeTitle = "Vegan Stuff",
-                price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
-            }
-
-
+ 
         };
 
         private Entree _selectedEntree;

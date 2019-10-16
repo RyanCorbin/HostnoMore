@@ -21,41 +21,33 @@ namespace HostnoMore.ViewModels
         {
             new Blog
             {
-                BlogDescription = "Chicken Sandwitch with fries and a Drink ",
+                BlogDescription = "DOUBLE–DOUBLE ® with fries and a Drink ",
                 BlogTitle = "Combo 1",
                 CreatedDate = DateTime.Now,
-                CreatedBy = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                CreatedBy = "Price: $6.70",
+                imageName = "double_double_meal.png"
             },
 
             new Blog
             {
-                BlogDescription = "Spicy Chicken Sandwitch with Fries and a Drink",
+                BlogDescription = "Cheeseburger with Fries and a Drink",
                 BlogTitle = "Combo 2",
-                CreatedDate = new DateTime(2017,12,30),
-                CreatedBy = "Price: 9.75$",
-                imageName = "SpicyChicken.jpg"
+                CreatedDate = DateTime.Now,
+                CreatedBy = "Price: $5.65",
+                imageName = "cheeseburger_meal.png"
             },
 
 
             new Blog
             {
-                BlogDescription = "Chicken Nuggets  with Fries and a Drink",
+                BlogDescription = "Hamburger with Fries and a Drink",
                 BlogTitle = "Combo 3",
-                CreatedDate = new DateTime(2017,11,30),
-                CreatedBy = "Price: 8.50$",
-                imageName = "ChickenNuggets2.jpg"
+                CreatedDate = DateTime.Now,
+                CreatedBy = "Price: $5.35",
+                imageName = "combo3.png"
             },
 
 
-            new Blog
-            {
-                BlogDescription = "Salad",
-                BlogTitle = "Combo 4",
-                CreatedDate = new DateTime(2017,10,30),
-                CreatedBy = "Price: 7.45",
-                imageName = "ChickenNuggets2.jpg"
-            },
 
         };
 
