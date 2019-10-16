@@ -34,7 +34,7 @@ namespace HostnoMore.ViewModels
                 BlogTitle = "Shakes",
                 CreatedDate = DateTime.Now,
                 CreatedBy = "Price: $2.45",
-                imageName = "In-Out-milkshake(1).png"
+                imageName = "In-Out-milkshake.png"
             },
 
 
