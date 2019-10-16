@@ -16,7 +16,7 @@
         Icon="indivitem.png"
         />
     <views:SidePage1
-        Title="Sides"
+        Title="drinks"
         Icon="drink.png"
         />
 </TabbedPage>
