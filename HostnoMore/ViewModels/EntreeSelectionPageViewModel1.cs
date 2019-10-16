@@ -25,28 +25,28 @@ namespace HostnoMore.ViewModels
                 EntreeDescription = "DOUBLE–DOUBLE ®",
                 entreeTitle = "DOUBLE–DOUBLE ®",
                 price = "Price: $3.95",
-                imageName = "doubledouble.png"
+                imageName = "doubledouble1.jpg"
             },
             new Entree
             {
                 EntreeDescription = "Cheeseburger",
                 entreeTitle = "Cheeseburger",
                 price = "Price: $2.80",
-                imageName = "cheeseburger.png"
+                imageName = "cheeseburger1.jpg"
             },
             new Entree
             {
                 EntreeDescription = "Hamburger",
                 entreeTitle = "Hamburger",
                 price = "Price: $2.50",
-                imageName = "hamburger.png"
+                imageName = "hamburger1.jpg"
             },
             new Entree
             {
                 EntreeDescription = "French Fries",
                 entreeTitle = "French Fries",
                 price = "Price: $1.90",
-                imageName = "fries.png"
+                imageName = "fries1.jpg"
             },
  
         };
