@@ -25,35 +25,35 @@ namespace HostnoMore.ViewModels
                 EntreeDescription = "Chicken Sandwitch",
                 entreeTitle = "Chicken Sandwitch",
                 price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                imageName = "ChickenSandwitchEntree.png"
             },
             new Entree
             {
                 EntreeDescription = "Spicy Chicken Sandwitch",
                 entreeTitle = "Spicy Chicken Sandwitch",
                 price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                imageName = "SpicyChickenSandwitchEntree.jpg"
             },
             new Entree
             {
                 EntreeDescription = "Chicken nuggets",
                 entreeTitle = "Chicken nuggets",
                 price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                imageName = "ChickenNuggetsEntree.jpg"
             },
             new Entree
             {
                 EntreeDescription = "Chicken Salad",
                 entreeTitle = "Chicken salad",
                 price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                imageName = "ChickenSaladEntree.png"
             },
             new Entree
             {
                 EntreeDescription = "Chicken Wrap",
                 entreeTitle = "Chicken Wrap",
                 price = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                imageName = "ChickenWrapEntree.png"
             },
             new Entree
             {
