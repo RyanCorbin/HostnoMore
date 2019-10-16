@@ -198,4 +198,118 @@
     <BundleResource Include="Resources\combo1.png" />
     <BundleResource Include="Resources\shoppingcart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cheeseburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cheeseburger_meal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cheeseburger1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Chick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChickenNuggets2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChickenNuggetsEntree.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChickenSaladEntree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chickenSandwitch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChickenSandwitchEntree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ChickenWrapEntree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\double_double_meal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\doubledouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\doubledouble1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drinks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DrinkSides.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fries1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\friesSides.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FrostedLemonadeSides.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hamburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hamburger_meal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hamburger1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HashBrownsSides.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HostnoMoreAppIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\in-nout-drinks.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\inNOutLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\In-Out-milkshake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MacAndCheeseSide.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\meal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shakes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Sliders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SpicyChicken.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SpicyChickenSandwitchEntree.jpg" />
+  </ItemGroup>
 </Project>
