@@ -54,7 +54,7 @@ namespace HostnoMore.ViewModels
                 BlogTitle = "Combo 4",
                 CreatedDate = new DateTime(2017,10,30),
                 CreatedBy = "Price: 7.45",
-                imageName = "ChickenNuggets2.jpg"
+                imageName = "ChickenSaladEntree.jpg"
             },
 
         };

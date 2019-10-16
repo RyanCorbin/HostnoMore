@@ -26,40 +26,40 @@ namespace HostnoMore.ViewModels
         {
             new Blog
             {
-                BlogDescription = "Chicken Sandwitch with fries and a Drink ",
-                BlogTitle = "Combo 1",
+                BlogDescription = "Fries",
+                BlogTitle = "Fries",
                 CreatedDate = DateTime.Now,
-                CreatedBy = "Price: 9.75$",
-                imageName = "chickenSandwitch.jpg"
+                CreatedBy = "Price: 2.75$",
+                imageName = "friesSides.png"
             },
 
             new Blog
             {
-                BlogDescription = "Spicy Chicken Sandwitch with Fries and a Drink",
-                BlogTitle = "Combo 2",
+                BlogDescription = "Chicken Sliders",
+                BlogTitle = "Chicken Sliders",
                 CreatedDate = new DateTime(2017,12,30),
-                CreatedBy = "Price: 9.75$",
-                imageName = "SpicyChicken.jpg"
+                CreatedBy = "Price: 2.50$",
+                imageName = "Sliders.png"
             },
 
 
             new Blog
             {
-                BlogDescription = "Chicken Nuggets  with Fries and a Drink",
-                BlogTitle = "Combo 3",
+                BlogDescription = "Hash Browns",
+                BlogTitle = "Hash Browns",
                 CreatedDate = new DateTime(2017,11,30),
-                CreatedBy = "Price: 8.50$",
-                imageName = "ChickenNuggets2.jpg"
+                CreatedBy = "Price: 3.25$",
+                imageName = "HashBrownsSides.png"
             },
 
 
             new Blog
             {
-                BlogDescription = "Salad",
-                BlogTitle = "Combo 4",
+                BlogDescription = "Mac And Cheese",
+                BlogTitle = "Mac And Cheese",
                 CreatedDate = new DateTime(2017,10,30),
-                CreatedBy = "Price: 7.45",
-                imageName = "ChickenNuggets2.jpg"
+                CreatedBy = "Price: 5.45",
+                imageName = "MacAndCheeseSide.jpg"
             },
 
         };
