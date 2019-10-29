@@ -30,6 +30,7 @@ namespace HostnoMore
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
+			containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsChickFilaPage, CallsChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
