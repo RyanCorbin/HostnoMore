@@ -27,11 +27,20 @@
             IsPassword="true"
             />
         <Button
-            Text="Login"
-            TextColor="Black"
-            Command="{Binding loginButton}"
-            FontSize="20"
-            FontAttributes="Bold"
-            />
+                Text="Login Now"
+                Command="{Binding GoToMainPage}"
+                Grid.Row="3"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="End"
+                TextColor="Black" />
+        <Button
+                Text="Register Now"
+                Command="{Binding GoToRegister}"
+                Grid.Row="5"
+                Grid.Column="0"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="End"
+                TextColor="Black" />
     </StackLayout>
 </ContentPage>

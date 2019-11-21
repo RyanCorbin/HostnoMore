@@ -14,6 +14,7 @@ namespace HostnoMore.ViewModels
         IPageDialogService _pageDialogService;
 
         public DelegateCommand loginButton { get; set; }
+        public DelegateCommand RegisterButton { get; set; }
 
         private string rest_id;
         public string restID
@@ -33,15 +34,26 @@ namespace HostnoMore.ViewModels
         {
             nav_service = navigationService;
             _pageDialogService = pageDialogService;
-
-            loginButton = new DelegateCommand(GoToRestCalls);
+            loginButton = new DelegateCommand(GoToMainPage);
+            RegisterButton = new DelegateCommand(GoToRegister);
         }
 
-        private async void GoToRestCalls()
+        private async void GoToMainPage()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRestCalls)}");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(loginButton)}");
+
+            await nav_service.NavigateAsync("HostnoMoreHomePageViewModel", null);
 
         }
+
+        private async void GoToRegister()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterButton)}");
+
+            await nav_service.NavigateAsync("RegisrationViewModel", null);
+
+        }
+
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
