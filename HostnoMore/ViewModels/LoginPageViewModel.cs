@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using HostnoMore.Models;
+using HostnoMore.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
+using System.Linq;
+using Plugin.ExternalMaps;
 
 namespace HostnoMore.ViewModels
 {
     public class LoginPageViewModel : BindableBase, INavigationAware
     {
-        INavigationService nav_service;
-        IPageDialogService _pageDialogService;
-
+        INavigationService _navigationService;
         public DelegateCommand loginButton { get; set; }
         public DelegateCommand RegisterButton { get; set; }
 
@@ -30,30 +35,28 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref rest_password, value); }
         }
 
-        public LoginPageViewModel(INavigationService navigationService, IPageDialogService pageDialogService)
+        public LoginPageViewModel(INavigationService navigationService)
         {
-            nav_service = navigationService;
-            _pageDialogService = pageDialogService;
+            _navigationService = navigationService;
             loginButton = new DelegateCommand(GoToMainPage);
             RegisterButton = new DelegateCommand(GoToRegister);
         }
 
         private async void GoToMainPage()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(loginButton)}");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToMainPage)}");
 
-            await nav_service.NavigateAsync("HostnoMoreHomePageViewModel", null);
+            await _navigationService.NavigateAsync("MainPage", null);
 
         }
 
         private async void GoToRegister()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterButton)}");
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToRegister)}");
 
-            await nav_service.NavigateAsync("RegisrationViewModel", null);
+            await _navigationService.NavigateAsync("RegisrationPage", null);
 
         }
-
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {

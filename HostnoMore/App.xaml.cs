@@ -22,16 +22,16 @@ namespace HostnoMore
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnInitialized)})");
             InitializeComponent();
 
-            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+            await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(LoginPage)}");
         }
 
         protected override void RegisterTypes(Prism.Ioc.IContainerRegistry containerRegistry)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RegisterTypes)})");
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegisrationPage, RegisrationViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, HostnoMoreHomePageViewModel>();
-			containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-			containerRegistry.RegisterForNavigation<RegisrationPage, RegisrationViewModel>();
             containerRegistry.RegisterForNavigation<CallsPage, CallsPageViewModel>();
             containerRegistry.RegisterForNavigation<CallsChickFilaPage, CallsChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSeatingPage, ChooseSeatingPageViewModel>();
@@ -41,14 +41,12 @@ namespace HostnoMore
             containerRegistry.RegisterForNavigation<SidePage, SidePageViewModel>();
             containerRegistry.RegisterForNavigation<SidePage1, SidePageViewModel1>();
             containerRegistry.RegisterForNavigation<Blog>();
-          //  containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<EntreeSelectionPage, EntreeSelectionPageViewModel>();
             containerRegistry.RegisterForNavigation<Entree, EntreeViewModel>();
             containerRegistry.RegisterForNavigation<EntreeSelectionPage1, EntreeSelectionPageViewModel1>();
             containerRegistry.RegisterForNavigation<Entree1, EntreeViewModel1>();
             containerRegistry.RegisterForNavigation<MenuOneContainerPage, MenuOneContainerPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuTwoContainerPage, MenuTwoContainerPageViewModel>();
-           // containerRegistry.RegisterForNavigation<TabSandwichesPage, TabSandwichesPageViewModel>();
             containerRegistry.RegisterForNavigation<CartChickFilaPage, CartChickFilaPageViewModel>();
             containerRegistry.RegisterForNavigation<CartPage, CartPageViewModel>();
             containerRegistry.RegisterForNavigation<CashPage, CashPageViewModel>();

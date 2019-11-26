@@ -7,12 +7,16 @@ using Plugin.ExternalMaps;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using HostnoMore.ViewModels;
+using HostnoMore.Helper;
 using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
     public class HostnoMoreHomePageViewModel : BindableBase, INavigationAware
     {
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
+
         INavigationService _navigationService;
         public DelegateCommand GoToRestaurantSide { get; set; }
         public DelegateCommand GoToMapCommand { get; set; }
@@ -89,6 +93,18 @@ namespace HostnoMore.ViewModels
             }
             else if (suggestionTapped == "ChickFila")
             {
+                string email = "2234SIS@gmail.com";
+                string Name = "Salan";
+                string password = "12345";
+
+                var person = await firebaseHelper.GetPerson(Name);
+                if (person == null)
+                {
+                    await firebaseHelper.AddPerson(email, Name, password);
+                }
+                //await DisplayAlert("Success", "Person Added Successfully", "OK");
+                //var allPersons = await firebaseHelper.GetAllPersons();
+                //lstPersons.ItemsSource = allPersons;
                 await _navigationService.NavigateAsync("ChickFilaSeatPage", null);
                 IsVisible = false;
             }

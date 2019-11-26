@@ -104,7 +104,7 @@ namespace HostnoMore.ViewModels
                 }
                 else
                 {
-                    //await nav_service.NavigateAsync("ConfirmationPage", null);
+                    await nav_service.NavigateAsync("LoginPage", null);
                 }
             }
         }

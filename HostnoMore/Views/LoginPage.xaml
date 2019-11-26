@@ -2,13 +2,14 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:HostnoMore"
     x:Class="HostnoMore.Views.LoginPage"
-    BackgroundImage="">
+    xmlns:prismBehaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+    NavigationPage.HasNavigationBar="false">
     <StackLayout
-        HorizontalOptions="Center"
-        VerticalOptions="Center">
+        Padding="0,50,0,10">
         <Label
-            Text="Enter Restaurant I.D."
+            Text="Enter Username"
             FontSize="16"
             FontAttributes="Bold"
             />
@@ -17,7 +18,7 @@
             Text="{Binding restID}"
             />
         <Label
-            Text="Enter Restaurant Password"
+            Text="Enter Password"
             FontSize="16"
             FontAttributes="Bold"
             />
@@ -26,21 +27,46 @@
             Text="{Binding restPassword}"
             IsPassword="true"
             />
-        <Button
+        <Grid
+               VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="0, 0, 0, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Button
                 Text="Login Now"
-                Command="{Binding GoToMainPage}"
-                Grid.Row="3"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="FillAndExpand"
+                Command="{Binding loginButton}"
+                Grid.Row="4"
                 Grid.Column="0"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="End"
-                TextColor="Black" />
-        <Button
-                Text="Register Now"
-                Command="{Binding GoToRegister}"
+                />
+            <Button
+                   Text="Register Now"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="FillAndExpand"
+                Command="{Binding RegisterButton}"
                 Grid.Row="5"
                 Grid.Column="0"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="End"
-                TextColor="Black" />
+                />
+        </Grid>
     </StackLayout>
 </ContentPage>
