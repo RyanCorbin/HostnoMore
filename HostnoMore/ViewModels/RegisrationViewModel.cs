@@ -8,12 +8,14 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
+using HostnoMore.Helper;
 using Xamarin.Forms;
 
 namespace HostnoMore.ViewModels
 {
     public class RegisrationViewModel : BindableBase, INavigationAware
     {
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
         INavigationService nav_service;
         IPageDialogService _pageDialogService;
         IRepository _repo;
@@ -104,6 +106,7 @@ namespace HostnoMore.ViewModels
                 }
                 else
                 {
+                    firebaseHelper.AddPerson(Username_Entry, Name_Entry, Password_Entry);
                     await nav_service.NavigateAsync("LoginPage", null);
                 }
             }

@@ -51,6 +51,7 @@ namespace HostnoMore.ViewModels
         public HostnoMoreHomePageViewModel(INavigationService navigationService)
         {
             Debug.WriteLine($"**** {this.GetType().Name}: ctor");
+           
 
             _navigationService = navigationService;
 
