@@ -98,7 +98,7 @@ namespace HostnoMore.ViewModels
                 string Name = "Salan";
                 string password = "12345";
 
-                var person = await firebaseHelper.GetPerson(Name);
+                var person = await firebaseHelper.GetPerson(Name,password);
                 if (person == null)
                 {
                     await firebaseHelper.AddPerson(email, Name, password);

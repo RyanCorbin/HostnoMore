@@ -106,7 +106,12 @@ namespace HostnoMore.ViewModels
                 }
                 else
                 {
-                    firebaseHelper.AddPerson(Username_Entry, Name_Entry, Password_Entry);
+                    var person = await firebaseHelper.GetPerson(Name_Entry, Password_Entry);
+                    if (person == null)
+                    {
+                        firebaseHelper.AddPerson(Username_Entry, Name_Entry, Password_Entry);
+                    }
+                   
                     await nav_service.NavigateAsync("LoginPage", null);
                 }
             }

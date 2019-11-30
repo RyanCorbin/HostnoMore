@@ -52,7 +52,7 @@ namespace HostnoMore.ViewModels
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToMainPage)}");
 
-            if(firebaseHelper.GetPerson(rest_id) != null)
+            if(firebaseHelper.GetPerson(rest_id, rest_password) != null)
             {
                 await _navigationService.NavigateAsync("MainPage", null);
             }
