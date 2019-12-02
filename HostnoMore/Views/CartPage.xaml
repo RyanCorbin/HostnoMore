@@ -8,7 +8,7 @@
     x:Name="Cart">
     <StackLayout>
 	   <ListView
-            ItemsSource="{Binding ItemDetail1}"
+            ItemsSource="{Binding ItemDetail}"
             IsRefreshing="{Binding ShowIsBusySpinner}"
             IsPullToRefreshEnabled="true"
             RefreshCommand="{Binding PullToRefreshCommand}"
@@ -16,9 +16,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
-                        Text="{Binding ItemDetail.BlogDescription}"
+                        Text="{Binding BlogDescription}"
                         TextColor="Black"
-                        Detail="{Binding ItemDetail.Price}"
+                        Detail="{Binding Price, StringFormat='Price: ${0}'}"
                         DetailColor="Black">
                         <TextCell.ContextActions>
                             <MenuItem
@@ -30,11 +30,11 @@
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <ListView.Header>
-                <Label Text="{Binding Total, StringFormat='Total: ${0}'}" HorizontalOptions="StartAndExpand"/>
-            </ListView.Header>
-            <ListView.Footer>
-                <Button
+          
+                
+        </ListView>
+        <Label Text="{Binding Total, StringFormat='Total: ${0}'}" HorizontalOptions="EndAndExpand" TextColor="Black"/>
+        <Button
                     Text="Continue to Checkout"
                     TextColor="Black"
                     FontSize="15"
@@ -42,7 +42,6 @@
                     Command="{Binding CheckoutCommand}"
                     HorizontalOptions="Center"
                     VerticalOptions="Center" />
-            </ListView.Footer>
-        </ListView>
+            
     </StackLayout>
 </ContentPage>
