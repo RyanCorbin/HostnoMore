@@ -8,8 +8,10 @@ namespace HostnoMore.Models
     {
         public string BlogTitle { get; set; }
         public string BlogDescription { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
+        public double Price { get; set; }
+        public double PriceSmall { get; set; }
+        public double PriceMedium { get; set; }
+        public double PriceLarge { get; set; }
         public string imageName { get; set; }
     }
 }
