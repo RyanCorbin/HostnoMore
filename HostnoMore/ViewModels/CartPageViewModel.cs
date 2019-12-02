@@ -80,10 +80,12 @@ namespace HostnoMore.ViewModels
         private async Task RefreshItemList()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshItemList)}");
+
             if (ItemDetail == null)
             {
                 ShowIsBusySpinner = true;
                 ItemDetail = new ObservableCollection<Blog>();
+                Total = _repo.GetTotal();
                 ShowIsBusySpinner = false;
             }
             else
@@ -93,7 +95,9 @@ namespace HostnoMore.ViewModels
                 if (itemsList != null)
                 {
                     ItemDetail = new ObservableCollection<Blog>(itemsList);
+
                 }
+                Total = _repo.GetTotal();
                 ShowIsBusySpinner = false;
             }
         }
@@ -103,6 +107,7 @@ namespace HostnoMore.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDeleteTapped)}:  {itemToDelete}");
             _repo.RemoveItem1(itemToDelete);
             ItemDetail.Remove(itemToDelete);
+            Total = _repo.GetTotal();
         }
 
         private async void GoToPaymentsPage()
@@ -136,7 +141,7 @@ namespace HostnoMore.ViewModels
         {
             RefreshItemList();
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnNavigatingTo)}");
-
+           /* 
             if (parameters != null && parameters.ContainsKey("ItemAdded"))
             {
                 if (ItemDetail == null)
@@ -146,9 +151,8 @@ namespace HostnoMore.ViewModels
                 var itemToAdd = (Blog)parameters["ItemAdded"];
                 ItemDetail.Add(itemToAdd);
 
-                TotalItems = itemToAdd.ToString();
             }
-            await RefreshItemList();
+            await RefreshItemList(); */
         }
     }
 }
