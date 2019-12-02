@@ -8,42 +8,18 @@
     x:Name="Cart">
     <StackLayout>
 	   <ListView
-            ItemsSource="{Binding FoodItem}"
+            ItemsSource="{Binding ItemDetail}"
             IsRefreshing="{Binding ShowIsBusySpinner}"
             IsPullToRefreshEnabled="true"
             RefreshCommand="{Binding PullToRefreshCommand}"
-            BackgroundColor="#ffaf4e">
-          <!--  <ListView.Header>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition
-                            Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition
-                            Width="*" />
-                        <ColumnDefinition
-                            Width="*" />
-                        <ColumnDefinition
-                            Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Text="Your Cart"
-                        FontAttributes="Bold"
-                        FontSize="Large"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                        HorizontalTextAlignment="Center"
-                        />
-                </Grid>
-            </ListView.Header>-->
+            BackgroundColor="white">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
-                        Text="{Binding Item}"
-                        TextColor="Black">
+                        Text="{Binding ItemDetail.BlogDescription}"
+                        TextColor="Black"
+                        Detail="{Binding ItemDetail.Price}"
+                        DetailColor="Black">
                         <TextCell.ContextActions>
                             <MenuItem
                                 Text="Delete"
@@ -54,6 +30,9 @@
                     </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.Header>
+                <Label Text="{Binding Total, StringFormat='Total: ${0}'}" HorizontalOptions="StartAndExpand"/>
+            </ListView.Header>
             <ListView.Footer>
                 <Button
                     Text="Continue to Checkout"
