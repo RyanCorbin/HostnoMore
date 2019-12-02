@@ -13,6 +13,7 @@ namespace HostnoMore.Services
         IList<OrderItem> itemFromSomeDataSource = null;
         IList<RestaurantSideItem> itemFromSomeDataSource0 = null;
         IList<Restaurant2SideItem> itemFromSomeDataSource1 = null;
+        IList<Blog> cartList = null;
 
         public Repository()
         {
@@ -25,6 +26,20 @@ namespace HostnoMore.Services
             await Task.Delay(500);
 
             return itemFromSomeDataSource;
+        }
+
+        public async Task<Blog> GetLastItem()
+        {
+            await Task.Delay(500);
+
+            return cartList[cartList.Count-1];
+        }
+
+        public async Task<IList<Blog>> GetItem1()
+        {
+            await Task.Delay(500);
+
+            return cartList;
         }
 
         public async Task<IList<OrderItem>> GetItem(int numberOfItems)
@@ -56,12 +71,31 @@ namespace HostnoMore.Services
             await Task.Delay(500);
         }
 
+        public async Task AddItem1(Blog newOrderItem)
+        {
+            if (cartList == null)
+            {
+                cartList = new List<Blog>();
+            }
+            cartList.Add(newOrderItem);
+            await Task.Delay(500);
+        }
+
         public async Task RemoveItem(OrderItem removeOrderItem)
         {
             if (itemFromSomeDataSource == null)
             {
             }
             itemFromSomeDataSource.Remove(removeOrderItem);
+            await Task.Delay(500);
+        }
+
+        public async Task RemoveItem1(Blog removeOrderItem)
+        {
+            if (cartList == null)
+            {
+            }
+            cartList.Remove(removeOrderItem);
             await Task.Delay(500);
         }
 
@@ -164,6 +198,17 @@ namespace HostnoMore.Services
             }
             itemFromSomeDataSource1.Remove(removeOrderItem1);
             await Task.Delay(500);
+        }
+
+        public double GetTotal()
+        {
+            double total = 0;
+            for (int i = 0; i < cartList.Count; i++)
+            {
+                total += cartList[i].Price;
+            }
+
+            return total;
         }
     }
 }

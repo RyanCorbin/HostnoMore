@@ -8,11 +8,19 @@ namespace HostnoMore.Services
     {
             Task<IList<OrderItem>> GetItem();
 
+            Task<IList<Blog>> GetItem1();
+
+            Task<Blog> GetLastItem();
+
             Task<IList<OrderItem>> GetItem(int numberOfItems);
 
             Task AddItem(OrderItem newOrderItem);
 
+            Task AddItem1(Blog newOrderItem);
+
             Task RemoveItem(OrderItem removeOrderItem);
+
+            Task RemoveItem1(Blog removeOrderItem);
 
             Task RemoveAllItems(OrderItem removeAllItems);
 
@@ -31,5 +39,9 @@ namespace HostnoMore.Services
             Task AddItem(Restaurant2SideItem newOrderItem1);
 
             Task RemoveItem(Restaurant2SideItem removeOrderItem1);
-        }
+
+            double GetTotal();
+
+
+    }
 }
