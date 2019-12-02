@@ -22,7 +22,9 @@ namespace HostnoMore.ViewModels
             get { return place_order; }
             set { SetProperty(ref place_order, value); }
         }
-        public DelegateCommand TapToOrder { get; set; }
+        public DelegateCommand TapToOrder1 { get; set; }
+        public DelegateCommand TapToOrder2 { get; set; }
+        public DelegateCommand TapToOrder3 { get; set; }
         public BlogViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
             : base(navigationService)
         {
@@ -30,7 +32,9 @@ namespace HostnoMore.ViewModels
 
             nav_service = navigationService;
             page_service = pageDialogService;
-            TapToOrder = new DelegateCommand(AddToCart);
+            TapToOrder1 = new DelegateCommand(AddToCart1);
+            TapToOrder2 = new DelegateCommand(AddToCart2);
+            TapToOrder3 = new DelegateCommand(AddToCart3);
         }
 
         private Blog _blogDetail;
@@ -40,25 +44,69 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref _blogDetail, value); }
         }
 
-        private async void AddToCart()
+        private async void AddToCart1()
         {
-            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(AddToCart)}");
-            PlaceOrder = BlogDetail.BlogDescription + " " + BlogDetail.CreatedBy;
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(AddToCart1)}");
+            // PlaceOrder = BlogDetail.BlogDescription + " " + BlogDetail.Price;
             bool userResponse = await page_service.DisplayAlertAsync("Add Item?", "Are you sure you want to add item to cart?", "Ok", "Cancel");
             if (userResponse == false)
                 return;
             else
             {
-                OrderItem newItem = new OrderItem
+                OrderItem newItem1 = new OrderItem
                 {
                     Item = this.PlaceOrder
                 };
-                await _repo.AddItem(newItem);
+                BlogDetail.Price = BlogDetail.PriceSmall;
+                await _repo.AddItem1(BlogDetail);
                 var navParams = new NavigationParameters();
-                navParams.Add("ItemAdded", newItem);
+                navParams.Add("ItemAdded", BlogDetail);
                 await Task.Delay(1);
             }
         }
+
+        private async void AddToCart2()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(AddToCart2)}");
+            PlaceOrder = BlogDetail.BlogDescription + " " + BlogDetail.Price;
+            bool userResponse = await page_service.DisplayAlertAsync("Add Item?", "Are you sure you want to add item to cart?", "Ok", "Cancel");
+            if (userResponse == false)
+                return;
+            else
+            {
+                OrderItem newItem1 = new OrderItem
+                {
+                    Item = this.PlaceOrder
+                };
+                BlogDetail.Price = BlogDetail.PriceMedium;
+                await _repo.AddItem1(BlogDetail);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", BlogDetail);
+                await Task.Delay(1);
+            }
+        }
+
+        private async void AddToCart3()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(AddToCart3)}");
+            PlaceOrder = BlogDetail.BlogDescription + " " + BlogDetail.Price;
+            bool userResponse = await page_service.DisplayAlertAsync("Add Item?", "Are you sure you want to add item to cart?", "Ok", "Cancel");
+            if (userResponse == false)
+                return;
+            else
+            {
+                OrderItem newItem1 = new OrderItem
+                {
+                    Item = this.PlaceOrder
+                };
+                BlogDetail.Price = BlogDetail.PriceLarge;
+                await _repo.AddItem1(BlogDetail);
+                var navParams = new NavigationParameters();
+                navParams.Add("ItemAdded", BlogDetail);
+                await Task.Delay(1);
+            }
+        }
+
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             BlogDetail = (Blog)parameters["Blog"];

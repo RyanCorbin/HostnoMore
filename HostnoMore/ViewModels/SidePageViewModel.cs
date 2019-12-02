@@ -28,8 +28,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Fries",
                 BlogTitle = "Fries",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: 2.75$",
+                PriceSmall = 2.50,
+                PriceMedium = 2.50,
+                PriceLarge = 2.50,
                 imageName = "friesSides.png"
             },
 
@@ -37,8 +38,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Chicken Sliders",
                 BlogTitle = "Chicken Sliders",
-                CreatedDate = new DateTime(2017,12,30),
-                CreatedBy = "Price: 2.50$",
+                PriceSmall = 2.50,
+                PriceMedium = 2.50,
+                PriceLarge = 2.50,
                 imageName = "Sliders.png"
             },
 
@@ -47,8 +49,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Hash Browns",
                 BlogTitle = "Hash Browns",
-                CreatedDate = new DateTime(2017,11,30),
-                CreatedBy = "Price: 3.25$",
+                PriceSmall = 3.25,
+                PriceMedium = 3.25,
+                PriceLarge = 3.25,
                 imageName = "HashBrownsSides.png"
             },
 
@@ -57,8 +60,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Mac And Cheese",
                 BlogTitle = "Mac And Cheese",
-                CreatedDate = new DateTime(2017,10,30),
-                CreatedBy = "Price: 5.45",
+                PriceSmall = 5.45,
+                PriceMedium = 5.45,
+                PriceLarge = 5.45,
                 imageName = "MacAndCheeseSide.jpg"
             },
 

@@ -20,10 +20,10 @@ namespace HostnoMore.ViewModels
 
         public DelegateCommand CheckoutCommand { get; set; }
         public DelegateCommand PullToRefreshCommand { get; set; }
-        public DelegateCommand<OrderItem> DeleteCommand { get; set; }
+        public DelegateCommand<Blog> DeleteCommand { get; set; }
 
-        private ObservableCollection<OrderItem> food_item;
-        public ObservableCollection<OrderItem> FoodItem
+        private ObservableCollection<Blog> food_item;
+        public ObservableCollection<Blog> FoodItem
         {
             get { return food_item; }
             set { SetProperty(ref food_item, value); }
@@ -36,6 +36,20 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref total_items, value); }
         }
 
+        private double total;
+        public double Total
+        {
+            get { return total; }
+            set { SetProperty(ref total, value); }
+        }
+        private ObservableCollection<Blog> _itemDetail;
+        public ObservableCollection<Blog> ItemDetail
+        {
+            get { return _itemDetail; }
+            set { SetProperty(ref _itemDetail, value); }
+        }
+
+
         private bool _showIsBusySpinner;
         public bool ShowIsBusySpinner
         {
@@ -43,6 +57,7 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref _showIsBusySpinner, value); }
         }
 
+        
         public CartChickFilaPageViewModel(INavigationService navigationService, IRepository repository, IPageDialogService pageDialogService)
         {
             RefreshItemList();
@@ -52,7 +67,8 @@ namespace HostnoMore.ViewModels
             RefreshItemList();
             CheckoutCommand = new DelegateCommand(GoToPaymentsPage);
             PullToRefreshCommand = new DelegateCommand(OnPullToRefresh);
-            DeleteCommand = new DelegateCommand<OrderItem>(OnDeleteTapped);
+            DeleteCommand = new DelegateCommand<Blog>(OnDeleteTapped);
+            Total = _repo.GetTotal();
             RefreshItemList();
         }
         private async void OnPullToRefresh()
@@ -65,37 +81,36 @@ namespace HostnoMore.ViewModels
         private async Task RefreshItemList()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(RefreshItemList)}");
-
-            if (FoodItem == null)
+            if (ItemDetail == null)
             {
                 ShowIsBusySpinner = true;
-                FoodItem = new ObservableCollection<OrderItem>();
+                ItemDetail = new ObservableCollection<Blog>();
                 ShowIsBusySpinner = false;
             }
             else
             {
                 ShowIsBusySpinner = true;
-                var itemsList = await _repo.GetItem();
+                var itemsList = await _repo.GetItem1();
                 if (itemsList != null)
                 {
-                    FoodItem = new ObservableCollection<OrderItem>(itemsList);
+                    ItemDetail = new ObservableCollection<Blog>(itemsList);
                 }
                 ShowIsBusySpinner = false;
             }
         }
 
-        private void OnDeleteTapped(OrderItem itemToDelete)
+        private void OnDeleteTapped(Blog itemToDelete)
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(OnDeleteTapped)}:  {itemToDelete}");
-            _repo.RemoveItem(itemToDelete);
-            FoodItem.Remove(itemToDelete);
+            _repo.RemoveItem1(itemToDelete);
+            ItemDetail.Remove(itemToDelete);
         }
 
         private async void GoToPaymentsPage()
         {
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(GoToPaymentsPage)}");
 
-            if (FoodItem.Count == 0)
+            if (ItemDetail.Count == 0)
             {
                 await page_service.DisplayAlertAsync("Error", "Your cart is empty", "Dismiss");
                 return;
@@ -125,12 +140,12 @@ namespace HostnoMore.ViewModels
 
             if (parameters != null && parameters.ContainsKey("ItemAdded"))
             {
-                if (FoodItem == null)
+                if (ItemDetail == null)
                 {
-                    FoodItem = new ObservableCollection<OrderItem>();
+                    ItemDetail = new ObservableCollection<Blog>();
                 }
-                var itemToAdd = (OrderItem)parameters["ItemAdded"];
-                FoodItem.Add(itemToAdd);
+                var itemToAdd = (Blog)parameters["ItemAdded"];
+                ItemDetail.Add(itemToAdd);
 
                 TotalItems = itemToAdd.ToString();
             }

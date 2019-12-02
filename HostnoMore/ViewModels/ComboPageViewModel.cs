@@ -23,8 +23,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Chicken Sandwitch with fries and a Drink ",
                 BlogTitle = "Combo 1",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: 9.75$",
+                PriceSmall = 10.3,
+                PriceMedium = 11.05,
+                PriceLarge = 11.8,
                 imageName = "chickenSandwitch.jpg"
             },
 
@@ -32,8 +33,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Spicy Chicken Sandwitch with Fries and a Drink",
                 BlogTitle = "Combo 2",
-                CreatedDate = new DateTime(2017,12,30),
-                CreatedBy = "Price: 9.75$",
+                PriceSmall = 10.8,
+                PriceMedium = 11.55,
+                PriceLarge = 12.3,
                 imageName = "SpicyChicken.jpg"
             },
 
@@ -42,8 +44,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Chicken Nuggets  with Fries and a Drink",
                 BlogTitle = "Combo 3",
-                CreatedDate = new DateTime(2017,11,30),
-                CreatedBy = "Price: 8.50$",
+                PriceSmall = 8.25,
+                PriceMedium = 9.00,
+                PriceLarge = 9.75,
                 imageName = "ChickenNuggets2.jpg"
             },
 
@@ -52,8 +55,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Salad",
                 BlogTitle = "Combo 4",
-                CreatedDate = new DateTime(2017,10,30),
-                CreatedBy = "Price: 7.45",
+                PriceSmall = 13.5,
+                PriceMedium = 14.25,
+                PriceLarge = 15.00,
                 imageName = "ChickenSaladEntree.jpg"
             },
 

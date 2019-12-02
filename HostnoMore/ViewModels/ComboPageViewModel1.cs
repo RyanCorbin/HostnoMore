@@ -23,8 +23,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "DOUBLE–DOUBLE ® with fries and a Drink ",
                 BlogTitle = "Combo 1",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: $6.70",
+                PriceSmall = 6.55,
+                PriceMedium = 6.7,
+                PriceLarge = 6.9,
                 imageName = "double_double_meal.png"
             },
 
@@ -32,8 +33,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Cheeseburger with Fries and a Drink",
                 BlogTitle = "Combo 2",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: $5.65",
+                PriceSmall = 5.5,
+                PriceMedium = 5.65,
+                PriceLarge = 5.85,
                 imageName = "cheeseburger_meal.png"
             },
 
@@ -42,8 +44,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Hamburger with Fries and a Drink",
                 BlogTitle = "Combo 3",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: $5.35",
+                PriceSmall = 5.2,
+                PriceMedium = 5.35,
+                PriceLarge = 5.55,
                 imageName = "hamburger_meal.jpg"
             },
 

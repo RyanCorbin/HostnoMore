@@ -23,8 +23,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Soft Drink",
                 BlogTitle = "Soft Drink",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: $1.55",
+                PriceSmall = 1.5,
+                PriceMedium = 1.65,
+                PriceLarge = 1.85,
                 imageName = "in-nout-drinks.jpeg"
             },
 
@@ -32,8 +33,9 @@ namespace HostnoMore.ViewModels
             {
                 BlogDescription = "Shakes: CHOCOLATE, STRAWBERRY OR VANILLA MADE WITH REAL ICE CREAM",
                 BlogTitle = "Shakes",
-                CreatedDate = DateTime.Now,
-                CreatedBy = "Price: $2.45",
+                PriceSmall = 2.15,
+                PriceMedium = 2.15,
+                PriceLarge = 2.15,
                 imageName = "In-Out-milkshake.png"
             },
 
