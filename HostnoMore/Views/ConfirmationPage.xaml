@@ -7,6 +7,13 @@
     <StackLayout
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="CenterAndExpand">
+        <Label
+                Text="Tip Your Experience!"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="FillAndExpand"
+                />
         <Grid
             HorizontalOptions="Center"
             VerticalOptions="Center"
@@ -15,19 +22,15 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label
-                Text="Tip Your Experience!"
-                FontAttributes="Bold"
-                FontSize="20"
-                HorizontalOptions="Center"
-                VerticalOptions="FillAndExpand"
-                Grid.Row="0"
-                Grid.Column="0"
-                />
+            
             <Label
                 Text="{Binding Total, StringFormat='Total ${0}'}"
                 Grid.Row= "1"
@@ -40,9 +43,9 @@
                 FontAttributes="Bold"
                 FontSize="10"
                 HorizontalOptions="Center"
-                Command="{Binding tipZero}"
                 Grid.Row="2"
-                Grid.Column="0"
+                Grid.Column="1"
+                Command="{Binding tipZero}"
                 />
             <Button
                 Text="15%"
@@ -50,9 +53,9 @@
                 FontAttributes="Bold"
                 FontSize="10"
                 HorizontalOptions="Center"
-                 Command="{Binding tipFifteen}"
                 Grid.Row="2"
-                Grid.Column="1"
+                Grid.Column="2"
+                Command="{Binding tipFifteen}"
                 />
 
             <Button
@@ -61,11 +64,23 @@
                 FontAttributes="Bold"
                 FontSize="10"
                 HorizontalOptions="Center"
-                 Command="{Binding tipTwenty}"
                 Grid.Row="2"
-                Grid.Column="2"
+                Grid.Column="3"
+                Command="{Binding tipTwenty}"
                 />
             <Button
+                Text="Delete Tip"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="10"
+                HorizontalOptions="Center"
+                Grid.Row="2"
+                Grid.Column="0"
+                Command="{Binding deleteTip}"
+                />
+            
+        </Grid>
+        <Button
                 Text="Place Another Order"
                 TextColor="Black"
                 FontAttributes="Bold"
@@ -76,6 +91,5 @@
                 Grid.Row="3"
                 Grid.Column="0"
                 />
-        </Grid>
     </StackLayout>
 </ContentPage>
