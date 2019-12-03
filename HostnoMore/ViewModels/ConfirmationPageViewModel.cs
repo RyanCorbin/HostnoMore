@@ -27,6 +27,16 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref foodDelivery, value); }
         }
 
+        private double total;
+        public double Total
+        {
+            get { return total; }
+            set { SetProperty(ref total, value); }
+        }
+        public DelegateCommand tipZero { get; set; }
+        public DelegateCommand tipFifteen { get; set; }
+        public DelegateCommand tipTwenty { get; set; }
+
         public ConfirmationPageViewModel(IPageDialogService pageDialogService, INavigationService navigationService, IRepository repository)
         {
             displayMessage = pageDialogService;
@@ -34,8 +44,11 @@ namespace HostnoMore.ViewModels
             _repo = repository;
 
             FoodDelivery = "Food out for delivery";
-
+            Total = _repo.GetTotal();
             AnotherOrder = new DelegateCommand(GoToHomePage);
+            tipZero = new DelegateCommand(TipZero);
+            tipFifteen = new DelegateCommand(TipFifteen);
+            tipTwenty = new DelegateCommand(TipTwenty);
         }
 
         private async void GoToHomePage()
@@ -52,6 +65,26 @@ namespace HostnoMore.ViewModels
             navParams.Add("ItemAdded", navParams);
             await Task.Delay(1);
             //_repo.RemoveAllItems(listOfItems);
+        }
+
+        private async void TipZero()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipZero)}");
+            Total = Total + 0;
+        }
+
+        private async void TipFifteen()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipFifteen)}");
+            var tmp = Total * 0.15;
+            Total = Total + tmp;
+        }
+
+        private async void TipTwenty()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipTwenty)}");
+            var tmp = Total * 0.20;
+            Total = Total + tmp;
         }
 
 

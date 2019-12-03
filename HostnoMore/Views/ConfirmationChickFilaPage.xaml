@@ -16,9 +16,12 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label
                 Text="Tip Your Experience!"
@@ -29,47 +32,50 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 />
+            <Label
+                Text="{Binding Total, StringFormat='Total ${0}'}"
+                Grid.Row= "1"
+                Grid.Column="0"
+                />
             <Button
                 Text="0%"
                 TextColor="Black"
                 FontAttributes="Bold"
-                FontSize="20"
+                FontSize="10"
                 HorizontalOptions="Center"
-                VerticalOptions="FillAndExpand"
-                Grid.Row="1"
+                Command="{Binding tipZero}"
+                Grid.Row="2"
                 Grid.Column="0"
                 />
-
             <Button
                 Text="15%"
                 TextColor="Black"
                 FontAttributes="Bold"
-                FontSize="20"
+                FontSize="10"
                 HorizontalOptions="Center"
-                VerticalOptions="FillAndExpand"
+                 Command="{Binding tipFifteen}"
                 Grid.Row="2"
-                Grid.Column="0"
+                Grid.Column="1"
                 />
 
             <Button
                 Text="20%"
                 TextColor="Black"
                 FontAttributes="Bold"
-                FontSize="20"
+                FontSize="10"
                 HorizontalOptions="Center"
-                VerticalOptions="FillAndExpand"
-                Grid.Row="3"
-                Grid.Column="0"
+                Command="{Binding tipTwenty}"
+                Grid.Row="2"
+                Grid.Column="2"
                 />
             <Button
                 Text="Place Another Order"
                 TextColor="Black"
                 FontAttributes="Bold"
-                FontSize="20"
+                FontSize="15"
                 HorizontalOptions="Center"
-                VerticalOptions="FillAndExpand"
                 Command="{Binding AnotherOrder}"
-                Grid.Row="4"
+                Grid.Row="3"
                 Grid.Column="0"
                 />
         </Grid>
