@@ -27,15 +27,16 @@ namespace HostnoMore.ViewModels
             set { SetProperty(ref foodDelivery, value); }
         }
 
-        private double total;
-        public double Total
-        {
-            get { return total; }
-            set { SetProperty(ref total, value); }
-        }
+		private double total;
+		public double Total
+		{
+			get { return total; }
+			set { SetProperty(ref total, value); }
+		}
         public DelegateCommand tipZero { get; set; }
         public DelegateCommand tipFifteen { get; set; }
         public DelegateCommand tipTwenty { get; set; }
+        public DelegateCommand deleteTip { get; set; }
 
         public ConfirmationPageViewModel(IPageDialogService pageDialogService, INavigationService navigationService, IRepository repository)
         {
@@ -49,6 +50,8 @@ namespace HostnoMore.ViewModels
             tipZero = new DelegateCommand(TipZero);
             tipFifteen = new DelegateCommand(TipFifteen);
             tipTwenty = new DelegateCommand(TipTwenty);
+            deleteTip = new DelegateCommand(DeleteTip);
+
         }
 
         private async void GoToHomePage()
@@ -78,6 +81,7 @@ namespace HostnoMore.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipFifteen)}");
             var tmp = Total * 0.15;
             Total = Total + tmp;
+            Total = Math.Round(Total, 2);
         }
 
         private async void TipTwenty()
@@ -85,6 +89,13 @@ namespace HostnoMore.ViewModels
             Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipTwenty)}");
             var tmp = Total * 0.20;
             Total = Total + tmp;
+            Total = Math.Round(Total, 2);
+        }
+
+        private async void DeleteTip()
+        {
+            Debug.WriteLine($"**** {this.GetType().Name}.{nameof(TipZero)}");
+            Total = _repo.GetTotal();
         }
 
 
